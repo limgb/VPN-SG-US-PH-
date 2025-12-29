@@ -61,6 +61,5 @@ proxy-groups:
       - US-Reality
       # - DIRECT        # 如需裸连对比再放开
 
-# ========== 规则 ==========
-rules:
-  - MATCH,Proxy
+
+
