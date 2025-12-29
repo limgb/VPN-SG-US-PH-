@@ -1,1 +1,29 @@
-lllllllllllllllllll
+mixed-port: 7890
+allow-lan: true
+external-controller: 127.0.0.1:9090
+ipv6: false
+
+proxies:
+  - name: "US"
+    type: vless
+    server: 47.253.143.193
+    port: 8443
+    uuid: 279317da-1e5e-42b5-bb54-35d24a49aca6
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    network: tcp
+    reality-opts:
+      public-key: "6Y4xMdaKg-5OALMRItgE0s5-07YVR3-Yja_jxFNLb2g"
+      short-id: "abcd"
+    servername: "www.microsoft.com"
+    client-fingerprint: chrome
+
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - US
+
+rules:
+  - MATCH,Proxy
